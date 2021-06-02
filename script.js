@@ -20,10 +20,11 @@ function mudaCorTodos() {
 }
 
 function riscaDesrriscaElemento(event) {
-  if (event.target.className === 'elementoLista completed') {
-    event.target.classList.remove('completed');
+  const li = event.target;
+  if (li.className === 'elementoLista completed') {
+    li.classList.remove('completed');
   } else {
-    event.target.className = 'elementoLista completed';
+    li.className = 'elementoLista completed';
   }
 }
 
