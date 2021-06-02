@@ -21,7 +21,7 @@ function mudaCorTodos() {
 
 function riscaDesrriscaElemento(event) {
   if (event.target.className === 'elementoLista completed') {
-    event.target.className = 'elementoLista';
+    event.target.classList.remove('completed');
   } else {
     event.target.className = 'elementoLista completed';
   }
