@@ -60,3 +60,13 @@ function apagaTudo() {
 }
 
 butaoApaga.addEventListener('click', apagaTudo);
+
+function apagaFinalizados() {
+  const finalizados = document.querySelectorAll('.completed');
+  for (let index = 0; index < finalizados.length; index += 1) {
+    finalizados[index].remove();
+  }
+}
+
+const butaoFinalizados = document.querySelector('#remove-finalizados');
+butaoFinalizados.addEventListener('click', apagaFinalizados);
