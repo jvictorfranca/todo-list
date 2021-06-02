@@ -48,3 +48,14 @@ function criaLiLista() {
 }
 
 botaoCriaTarefa.addEventListener('click', criaLiLista);
+
+const butaoApaga = document.querySelector('#apaga-tudo');
+
+function apagaTudo() {
+  const li = document.querySelectorAll('li.elementoLista');
+  for (let index = 0; index < li.length; index += 1) {
+    li[index].remove();
+  }
+}
+
+butaoApaga.addEventListener('click', apagaTudo);
