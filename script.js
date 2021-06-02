@@ -4,11 +4,11 @@ const listaTarefas = document.querySelector('#lista-tarefas');
 
 function mudaCor(event) {
   const li = document.querySelectorAll('li.elementoLista');
-
+  const clicado = event.target;
   for (let indexLi = 0; indexLi < li.length; indexLi += 1) {
     li[indexLi].id = '';
   }
-  event.target.id = 'selected';
+  clicado.id = 'selected';
 }
 
 function mudaCorTodos() {
