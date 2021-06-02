@@ -78,3 +78,22 @@ function apagaSelecionado() {
 
 const butaoSelecionado = document.querySelector('#remover-selecionado');
 butaoSelecionado.addEventListener('click', apagaSelecionado);
+
+function salvaTarefas() {
+  const ol = document.querySelector('ol#lista-tarefas');
+  localStorage.ol = ol.innerHTML;
+}
+
+const butaoSalvar = document.querySelector('#salvar-tarefas');
+
+butaoSalvar.addEventListener('click', salvaTarefas);
+
+function geraTarefas() {
+  if (localStorage.ol !== undefined) {
+    const localiza = document.querySelector('ol#lista-tarefas');
+    localiza.innerHTML = localStorage.ol;
+    mudaCorTodos();
+    riscaDesrriscaTodos();
+  }
+}
+geraTarefas();
