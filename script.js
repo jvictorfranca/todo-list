@@ -68,5 +68,5 @@ function apagaFinalizados() {
   }
 }
 
-const butaoFinalizados = document.querySelector('#remove-finalizados');
+const butaoFinalizados = document.querySelector('#remover-finalizados');
 butaoFinalizados.addEventListener('click', apagaFinalizados);
