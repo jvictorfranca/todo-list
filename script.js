@@ -70,3 +70,11 @@ function apagaFinalizados() {
 
 const butaoFinalizados = document.querySelector('#remover-finalizados');
 butaoFinalizados.addEventListener('click', apagaFinalizados);
+
+function apagaSelecionado() {
+  const selecionado = document.querySelector('#selected');
+  selecionado.remove();
+}
+
+const butaoSelecionado = document.querySelector('#remover-selecionado');
+butaoSelecionado.addEventListener('click', apagaSelecionado);
