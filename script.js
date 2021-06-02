@@ -6,9 +6,9 @@ function mudaCor(event) {
   const li = document.querySelectorAll('li.elementoLista');
 
   for (let indexLi = 0; indexLi < li.length; indexLi += 1) {
-    li[indexLi].className = 'elementoLista';
+    li[indexLi].id = '';
   }
-  event.target.className += ' selected';
+  event.target.id = 'selected';
 }
 
 function mudaCorTodos() {
@@ -16,6 +16,21 @@ function mudaCorTodos() {
 
   for (let index = 0; index < li.length; index += 1) {
     li[index].addEventListener('click', mudaCor);
+  }
+}
+
+function riscaDesrriscaElemento(event) {
+  if (event.target.className === 'elementoLista completed') {
+    event.target.className = 'elementoLista';
+  } else {
+    event.target.className = 'elementoLista completed';
+  }
+}
+
+function riscaDesrriscaTodos() {
+  const li = document.querySelectorAll('li.elementoLista');
+  for (let index = 0; index < li.length; index += 1) {
+    li[index].addEventListener('dblclick', riscaDesrriscaElemento);
   }
 }
 
@@ -28,6 +43,7 @@ function criaLiLista() {
     listaTarefas.appendChild(li);
     inputTarefa.value = '';
     mudaCorTodos();
+    riscaDesrriscaTodos();
   }
 }
 
