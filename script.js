@@ -97,3 +97,27 @@ function geraTarefas() {
   }
 }
 geraTarefas();
+
+function itemUp() {
+  const item = document.querySelector('#selected');
+  const lista = document.querySelector('#lista-tarefas');
+  if (item !== null && item.previousElementSibling !== null) {
+    lista.insertBefore(item, item.previousSibling);
+  }
+}
+
+function itemDown() {
+  const item = document.querySelector('#selected');
+  const lista = document.querySelector('#lista-tarefas');
+  if (item !== null && item.nextElementSibling !== null) {
+    lista.insertBefore(item, item.nextSibling.nextSibling);
+  }
+}
+
+const botaoSobe = document.querySelector('#mover-cima');
+
+botaoSobe.addEventListener('click', itemUp);
+
+const botaoDesce = document.querySelector('#mover-baixo');
+
+botaoDesce.addEventListener('click', itemDown);
